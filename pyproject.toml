@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "sangkuriang-ideal-solver"
+version = "0.0.1"
+description = "Idealized 1D Korteweg-de Vries soliton solver with spectral methods"
+authors = [
+    "Sandy H.S. Herho",
+    "Dasapta E. Irawan",
+    "Rusmawan Suwarman"
+]
+license = "WTFPL"
+readme = "README.md"
+packages = [{include = "sangkuriang_ideal", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+numpy = ">=1.20.0"
+scipy = ">=1.7.0"
+matplotlib = ">=3.3.0"
+netCDF4 = ">=1.5.0"
+tqdm = ">=4.60.0"
+numba = ">=0.53.0"
+
+[tool.poetry.group.dev.dependencies]
+black = ">=22.0.0"
+
+[tool.poetry.scripts]
+sangkuriang = "sangkuriang_ideal.cli:main"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
