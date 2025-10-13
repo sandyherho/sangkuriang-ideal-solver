@@ -138,18 +138,19 @@ class KdVSolver:
         
         return dudt
     
-    def compute_invariants(self, u_hist: np.ndarray, mu: float) -> Dict[str, np.ndarray]:
+    def compute_invariants(self, u_hist: np.ndarray, mu: float, eps: float) -> Dict[str, np.ndarray]:
         """
         Compute conserved quantities using spectral derivatives (FIXED).
         
         Conservation laws:
         - Mass: M = ∫ u dx
         - Momentum: P = ∫ u² dx
-        - Energy: E = ∫ (u³ - μ·u_x²) dx
+        - Energy: E = ∫ (ε·u³ - μ·u_x²) dx  [FIXED: added ε coefficient]
         
         Args:
             u_hist: Solution history [n_snapshots × nx]
             mu: Dispersion coefficient
+            eps: Nonlinearity parameter [FIXED: now required]
         
         Returns:
             Dictionary with mass, momentum, energy arrays
@@ -169,10 +170,10 @@ class KdVSolver:
             # Momentum: ∫ u² dx
             momentum[i] = np.trapz(u**2, self.x)
             
-            # Energy: ∫ (u³ - μ·u_x²) dx
-            # FIXED: Use spectral derivative for consistency
+            # Energy: ∫ (ε·u³ - μ·u_x²) dx
+            # FIXED: Added eps coefficient to match KdV physics
             u_x = self.spatial_derivative(u, order=1)
-            energy[i] = np.trapz(u**3 - mu * u_x**2, self.x)
+            energy[i] = np.trapz(eps * u**3 - mu * u_x**2, self.x)
         
         return {
             'mass': mass,
@@ -260,7 +261,8 @@ class KdVSolver:
         if self.verbose:
             print(f"  Computing conservation laws...")
         
-        invariants = self.compute_invariants(u, mu)
+        # FIXED: Pass eps to compute_invariants
+        invariants = self.compute_invariants(u, mu, eps)
         
         # Calculate relative errors
         mass = invariants['mass']

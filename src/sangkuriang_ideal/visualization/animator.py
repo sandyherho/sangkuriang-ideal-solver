@@ -162,17 +162,11 @@ class Animator:
             ax.plot(x, [t[frame]]*len(x), u[frame],
                    color='cyan', linewidth=3.5, alpha=1.0, zorder=10)
             
-            # Expected soliton position marker
-            amplitude = np.max(u[0])
-            expected_pos = np.mean(x[u[0] > 0.5*amplitude]) + velocity * t[frame]
-            if x[0] <= expected_pos <= x[-1]:
-                ax.scatter([expected_pos], [t[frame]], [amplitude*0.8],
-                         color='red', s=100, marker='o', alpha=0.9, zorder=11,
-                         edgecolors='white', linewidths=2)
+            # REMOVED: Red soliton position marker
             
-            ax.set_xlabel('Position [m]', fontsize=12, color='white', labelpad=12)
-            ax.set_ylabel('Time [s]', fontsize=12, color='white', labelpad=12)
-            ax.set_zlabel('Amplitude [m]', fontsize=12, color='white', labelpad=12)
+            ax.set_xlabel('Position [m]', fontsize=16, color='white', labelpad=12)
+            ax.set_ylabel('Time [s]', fontsize=16, color='white', labelpad=12)
+            ax.set_zlabel('Amplitude [m]', fontsize=16, color='white', labelpad=12)
             ax.set_xlim(x[0], x[-1])
             ax.set_ylim(0, t[-1])
             ax.set_zlim(np.min(u)*1.1, np.max(u)*1.15)
@@ -188,6 +182,10 @@ class Animator:
             ax.yaxis.pane.set_edgecolor('white')
             ax.zaxis.pane.set_edgecolor('white')
             ax.grid(True, alpha=0.2, color='white', linestyle='--', linewidth=0.5)
+            
+            # Calculate expected position for display only (not plotted)
+            amplitude = np.max(u[0])
+            expected_pos = np.mean(x[u[0] > 0.5*amplitude]) + velocity * t[frame]
             
             title_text.set_text(
                 f'{title} | t = {t[frame]:.2f}s | Position: {expected_pos:.2f}m'
@@ -218,8 +216,8 @@ class Animator:
         ax.set_xlim(x[0], x[-1])
         y_margin = 0.1 * (np.max(u) - np.min(u))
         ax.set_ylim(np.min(u) - y_margin, np.max(u) + y_margin)
-        ax.set_xlabel('Position [m]', fontsize=13, color='white')
-        ax.set_ylabel('Amplitude [m]', fontsize=13, color='white')
+        ax.set_xlabel('Position [m]', fontsize=16, color='white')
+        ax.set_ylabel('Amplitude [m]', fontsize=16, color='white')
         ax.tick_params(colors='white', which='both')
         
         for spine in ax.spines.values():
@@ -230,8 +228,8 @@ class Animator:
         line, = ax.plot([], [], linewidth=line_width, color=cmap(0.7), alpha=alpha)
         line_glow, = ax.plot([], [], linewidth=line_width*2.5,
                            color=cmap(0.7), alpha=alpha*0.25)
-        marker, = ax.plot([], [], 'ro', markersize=12, alpha=0.8,
-                        markeredgecolor='white', markeredgewidth=2)
+        
+        # REMOVED: Red marker initialization
         
         time_text = ax.text(
             0.02, 0.95, '', transform=ax.transAxes,
@@ -258,10 +256,7 @@ class Animator:
             line_glow.set_data(x, u[frame])
             line_glow.set_color(current_color)
             
-            amplitude = np.max(u[0])
-            expected_pos = np.mean(x[u[0] > 0.5*amplitude]) + velocity * t[frame]
-            if x[0] <= expected_pos <= x[-1]:
-                marker.set_data([expected_pos], [amplitude*0.9])
+            # REMOVED: Red marker update
             
             time_text.set_text(f'{title}\nt = {t[frame]:.2f}s')
             time_text.get_bbox_patch().set_edgecolor(current_color)
@@ -272,7 +267,7 @@ class Animator:
                 f'v = {velocity:.3f} m/s'
             )
             
-            return [line, line_glow, time_text, stats_text, marker]
+            return [line, line_glow, time_text, stats_text]
         
         anim = animation.FuncAnimation(
             fig, animate, frames=len(t),
