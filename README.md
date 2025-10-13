@@ -1,4 +1,4 @@
-# `sangkuriang-ideal-solver`: Idealized 1D KdV Soliton Solver
+# `sangkuriang`: Idealized 1D KdV Soliton Solver
 
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
