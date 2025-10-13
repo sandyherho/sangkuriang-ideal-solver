@@ -1,4 +1,4 @@
-# `sangkuriang`: Idealized 1D KdV Soliton Solver
+# `sangkuriang`: Idealized KdV solver
 
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
 [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
@@ -65,6 +65,7 @@ print(f"Energy error: {result['energy_error']:.2e}")
 - Sandy H.S. Herho
 - Dasapta E. Irawan
 - Rusmawan Suwarman  
+- Siti N. Kaban
 
 
 ## License

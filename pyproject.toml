@@ -5,7 +5,8 @@ description = "Idealized 1D Korteweg-de Vries soliton solver with spectral metho
 authors = [
     "Sandy H.S. Herho",
     "Dasapta E. Irawan",
-    "Rusmawan Suwarman"
+    "Rusmawan Suwarman",
+    "Siti N. Kaban"
 ]
 license = "WTFPL"
 readme = "README.md"

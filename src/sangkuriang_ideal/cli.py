@@ -26,7 +26,7 @@ def print_header():
     print("=" * 70)
     print("\n  Korteweg-de Vries Soliton Solver")
     print("  Spectral Methods + Adaptive Time Stepping")
-    print("\n  Authors: Sandy H.S. Herho, Dasapta E. Irawan, Rusmawan Suwarman")
+    print("\n  Authors: Sandy H.S. Herho, Dasapta E. Irawan, Rusmawan Suwarman, Siti N. Kaban")
     print("  License: WTFPL - Do What The F*ck You Want To")
     print("=" * 70 + "\n")
 
