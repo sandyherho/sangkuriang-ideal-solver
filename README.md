@@ -1,6 +1,7 @@
 # `sangkuriang`: Idealized KdV solver
 
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
+[![PyPI](https://img.shields.io/pypi/v/sangkuriang-ideal-solver.svg)](https://pypi.org/project/sangkuriang-ideal-solver/)
 [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
 [![Numba](https://img.shields.io/badge/accelerated-numba-orange.svg)](https://numba.pydata.org/)
 
@@ -10,7 +11,7 @@ High-performance idealized Korteweg-de Vries (KdV) soliton solver with spectral 
 
 Solves the Korteweg-de Vries equation:
 
-∂u/∂t + ε·u·∂u/∂x + μ·∂³u/∂x³ = 0
+$$\frac{\partial u}{\partial t} + \varepsilon \cdot u \cdot \frac{\partial u}{\partial x} + \mu \cdot \frac{\partial^3 u}{\partial x^3} = 0$$
 
 **Conservation Laws:** Mass, Momentum, Energy
 
@@ -25,8 +26,14 @@ Solves the Korteweg-de Vries equation:
 
 ## Installation
 
+**From PyPI:**
 ```bash
-git clone https://github.com/yourusername/sangkuriang-ideal-solver.git
+pip install sangkuriang-ideal-solver
+```
+
+**From source:**
+```bash
+git clone https://github.com/sandyherho/sangkuriang-ideal-solver.git
 cd sangkuriang-ideal-solver
 pip install -e .
 ```
@@ -60,13 +67,28 @@ print(f"Energy error: {result['energy_error']:.2e}")
 | 3 | Collision (different heights) | Overtaking |
 | 4 | Three-soliton system | Complex multi-body |
 
+## Citation
+
+If you use this software in your research, please cite:
+
+```bibtex
+@article{herho202x_sangkuriang,
+  title   = {Sangkuriang: An Idealized {K}orteweg-de {V}ries Soliton Solver with Spectral Methods},
+  author  = {Herho, Sandy H. S. and Irawan, Dasapta E. and Suwarman, Rusmawan and Kaban, Siti N.},
+  journal = {xxx},
+  volume  = {xxx},
+  pages   = {xxx--xxx},
+  year    = {202x},
+  doi     = {10.xxxx/xxxxx}
+}
+```
+
 ## Authors
 
 - Sandy H.S. Herho
 - Dasapta E. Irawan
 - Rusmawan Suwarman  
 - Siti N. Kaban
-
 
 ## License
 
