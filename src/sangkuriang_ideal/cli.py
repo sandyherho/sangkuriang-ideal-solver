@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-Command Line Interface for Sangkuriang KdV Solver
+Command Line Interface for sangkuriang KdV Solver
 four test cases with increasing complexity
 """
 
@@ -25,7 +25,7 @@ def print_header():
     print(" " * 22 + "Version 0.0.2")
     print("=" * 70)
     print("\n  Korteweg-de Vries Soliton Solver")
-    print("  Spectral Methods + Adaptive Time Stepping")
+    print(" Pseudo-spectral Methods + Adaptive Time Stepping")
     print("\n  Authors: Sandy H.S. Herho, Dasapta E. Irawan,")
     print("           Rusmawan Suwarman, Siti N. Kaban")
     print("  License: WTFPL - Do What The F*ck You Want To")

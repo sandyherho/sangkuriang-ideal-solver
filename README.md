@@ -6,7 +6,7 @@
 [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
 [![Numba](https://img.shields.io/badge/accelerated-numba-orange.svg)](https://numba.pydata.org/)
 
-Idealized Korteweg-de Vries (KdV) soliton solver with spectral methods and Numba acceleration.
+Idealized Korteweg-de Vries (KdV) soliton solver with pseudo-spectral methods and Numba acceleration.
 
 ## Physics
 
@@ -74,7 +74,7 @@ If you use this software in your research, please cite:
 
 ```bibtex
 @article{herho202x_sangkuriang,
-  title   = {Sangkuriang: An Idealized {K}orteweg-de {V}ries Soliton Solver with Spectral Methods},
+  title   = {Sangkuriang: An Idealized {K}orteweg-de {V}ries Soliton Solver with Pseudo-spectral Methods},
   author  = {Herho, Sandy H. S. and Irawan, Dasapta E. and Suwarman, Rusmawan and Kaban, Siti N.},
   journal = {xxx},
   volume  = {xxx},
