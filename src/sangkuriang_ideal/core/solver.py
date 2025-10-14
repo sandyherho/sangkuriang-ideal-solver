@@ -1,6 +1,5 @@
 """
 sangkuriang: Idealized 1D Korteweg-de Vries Soliton Solver
-FIXED: Energy conservation formula with proper normalization factors
 """
 
 import numpy as np
