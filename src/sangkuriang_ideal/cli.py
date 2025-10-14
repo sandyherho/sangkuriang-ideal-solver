@@ -2,6 +2,7 @@
 """
 Command Line Interface for Sangkuriang KdV Solver
 four test cases with increasing complexity
+FIXED: Clear timing breakdown display
 """
 
 import argparse
@@ -26,7 +27,8 @@ def print_header():
     print("=" * 70)
     print("\n  Korteweg-de Vries Soliton Solver")
     print("  Spectral Methods + Adaptive Time Stepping")
-    print("\n  Authors: Sandy H.S. Herho, Dasapta E. Irawan, Rusmawan Suwarman, Siti N. Kaban")
+    print("\n  Authors: Sandy H.S. Herho, Dasapta E. Irawan,")
+    print("           Rusmawan Suwarman, Siti N. Kaban")
     print("  License: WTFPL - Do What The F*ck You Want To")
     print("=" * 70 + "\n")
 
@@ -151,6 +153,9 @@ def run_scenario(config: dict, output_dir: str = "outputs",
                 print(f"        Momentum: {result['momentum_error']:.2e}")
                 print(f"        Energy: {result['energy_error']:.2e}")
         
+        # Get simulation time before continuing
+        sim_time = timer.times.get('simulation', 0)
+        
         # [4/5] Save NetCDF
         if config.get('save_netcdf', True):
             with timer.time_section("save_netcdf"):
@@ -190,10 +195,16 @@ def run_scenario(config: dict, output_dir: str = "outputs",
         timer.stop("total")
         logger.log_timing(timer.get_times())
         
+        # Get timing breakdown
+        anim_time = timer.times.get('animation', 0)
+        total_time = timer.times.get('total', 0)
+        
         if verbose:
             print(f"\n{'=' * 60}")
             print("SIMULATION COMPLETED SUCCESSFULLY")
-            print(f"  Total time: {timer.get_times()['total']:.2f} s")
+            print(f"  Simulation time: {sim_time:.2f} s")
+            print(f"  Animation time: {anim_time:.2f} s")
+            print(f"  Total time: {total_time:.2f} s")
             
             if logger.warnings:
                 print(f"  Warnings: {len(logger.warnings)}")

@@ -77,9 +77,19 @@ class SimulationLogger:
         self.info("TIMING BREAKDOWN")
         self.info("=" * 60)
         
-        for key, value in sorted(timing.items()):
-            self.info(f"  {key}: {value:.3f} s")
+        # Separate simulation and post-processing times
+        sim_time = timing.get('simulation', 0)
+        anim_time = timing.get('animation', 0)
+        total_time = timing.get('total', 0)
         
+        self.info(f"  Simulation: {sim_time:.3f} s")
+        self.info(f"  Animation: {anim_time:.3f} s")
+        
+        for key, value in sorted(timing.items()):
+            if key not in ['simulation', 'animation', 'total']:
+                self.info(f"  {key}: {value:.3f} s")
+        
+        self.info(f"  Total: {total_time:.3f} s")
         self.info("=" * 60)
     
     def log_results(self, results: dict):
@@ -126,6 +136,8 @@ class SimulationLogger:
         # Soliton properties
         velocity = params['soliton_velocity']
         self.info(f"  Soliton velocity: {velocity:.6f} m/s")
+        
+        self.info(f"  Energy formula: E = ∫ ((ε/2)·u³ - (3μ/2)·u_x²) dx")
         
         self.info("=" * 60)
     

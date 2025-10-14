@@ -1,5 +1,6 @@
 """
 sangkuriang: Idealized 1D Korteweg-de Vries Soliton Solver
+FIXED: Energy conservation formula with proper normalization factors
 """
 
 import numpy as np
@@ -142,15 +143,15 @@ class KdVSolver:
         """
         Compute conserved quantities using spectral derivatives (FIXED).
         
-        Conservation laws:
+        Conservation laws for ∂u/∂t + ε·u·∂u/∂x + μ·∂³u/∂x³ = 0:
         - Mass: M = ∫ u dx
         - Momentum: P = ∫ u² dx
-        - Energy: E = ∫ (ε·u³ - μ·u_x²) dx  [FIXED: added ε coefficient]
+        - Energy: E = ∫ ((ε/2)·u³ - (3μ/2)·u_x²) dx  [FIXED: added normalization]
         
         Args:
             u_hist: Solution history [n_snapshots × nx]
             mu: Dispersion coefficient
-            eps: Nonlinearity parameter [FIXED: now required]
+            eps: Nonlinearity parameter
         
         Returns:
             Dictionary with mass, momentum, energy arrays
@@ -170,10 +171,10 @@ class KdVSolver:
             # Momentum: ∫ u² dx
             momentum[i] = np.trapz(u**2, self.x)
             
-            # Energy: ∫ (ε·u³ - μ·u_x²) dx
-            # FIXED: Added eps coefficient to match KdV physics
+            # Energy: ∫ ((ε/2)·u³ - (3μ/2)·u_x²) dx
+            # FIXED: Added proper normalization factors (1/2 and 3/2)
             u_x = self.spatial_derivative(u, order=1)
-            energy[i] = np.trapz(eps * u**3 - mu * u_x**2, self.x)
+            energy[i] = np.trapz((eps/2.0) * u**3 - (3.0*mu/2.0) * u_x**2, self.x)
         
         return {
             'mass': mass,
@@ -261,7 +262,6 @@ class KdVSolver:
         if self.verbose:
             print(f"  Computing conservation laws...")
         
-        # FIXED: Pass eps to compute_invariants
         invariants = self.compute_invariants(u, mu, eps)
         
         # Calculate relative errors

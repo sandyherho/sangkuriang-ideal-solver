@@ -88,7 +88,7 @@ class DataHandler:
             nc_energy[:] = result['energy']
             nc_energy.units = "m⁴"
             nc_energy.long_name = "conserved_energy"
-            nc_energy.description = "E = ∫ (u³ - μ·u_x²) dx"
+            nc_energy.description = "E = ∫ ((ε/2)·u³ - (3μ/2)·u_x²) dx"
             
             # Conservation errors
             nc.mass_error = float(result['mass_error'])
