@@ -6,6 +6,7 @@ Creates animations with:
 - Rotating viewpoint
 - Conservation law tracking
 - Professional styling
+- Time display with 3 decimal precision
 """
 
 import numpy as np
@@ -94,7 +95,7 @@ class Animator:
     @staticmethod
     def _create_3d_animation(x, t, u, mass, energy, mass_error, energy_error,
                             velocity, title, colormap):
-        """Create 3D surface plot animation."""
+        """Create 3D surface plot animation with improved time display."""
         fig = plt.figure(figsize=(16, 10))
         ax = fig.add_subplot(111, projection='3d')
         fig.patch.set_facecolor('black')
@@ -127,19 +128,39 @@ class Animator:
         plt.setp(plt.getp(cbar.ax.axes, 'yticklabels'), color='white')
         dummy_surf.remove()
         
+        # Title with scenario name (top center)
         title_text = ax.text2D(
-            0.5, 0.95, '', transform=ax.transAxes,
-            fontsize=14, color='white', weight='bold',
+            0.5, 0.97, title, transform=ax.transAxes,
+            fontsize=16, color='white', weight='bold',
             ha='center', va='top',
             bbox=dict(boxstyle='round', facecolor='black',
-                     alpha=0.7, edgecolor='white', linewidth=1.5)
+                     alpha=0.8, edgecolor='white', linewidth=2)
         )
         
+        # Time display (top left - prominent)
+        time_text = ax.text2D(
+            0.02, 0.97, '', transform=ax.transAxes,
+            fontsize=20, color='cyan', weight='bold',
+            ha='left', va='top',
+            bbox=dict(boxstyle='round', facecolor='black',
+                     alpha=0.9, edgecolor='cyan', linewidth=2.5)
+        )
+        
+        # Position display (top right)
+        pos_text = ax.text2D(
+            0.98, 0.97, '', transform=ax.transAxes,
+            fontsize=14, color='yellow', weight='bold',
+            ha='right', va='top',
+            bbox=dict(boxstyle='round', facecolor='black',
+                     alpha=0.8, edgecolor='yellow', linewidth=2)
+        )
+        
+        # Conservation stats (bottom center)
         stats_text = ax.text2D(
             0.5, 0.02, '', transform=ax.transAxes,
-            fontsize=10, color='white', ha='center', va='bottom',
+            fontsize=11, color='white', ha='center', va='bottom',
             bbox=dict(boxstyle='round', facecolor='black',
-                     alpha=0.7, edgecolor='cyan', linewidth=1.5)
+                     alpha=0.8, edgecolor='lime', linewidth=1.5)
         )
         
         def animate(frame):
@@ -162,8 +183,6 @@ class Animator:
             ax.plot(x, [t[frame]]*len(x), u[frame],
                    color='cyan', linewidth=3.5, alpha=1.0, zorder=10)
             
-            # REMOVED: Red soliton position marker
-            
             ax.set_xlabel('Position [m]', fontsize=16, color='white', labelpad=12)
             ax.set_ylabel('Time [s]', fontsize=16, color='white', labelpad=12)
             ax.set_zlabel('Amplitude [m]', fontsize=16, color='white', labelpad=12)
@@ -183,20 +202,19 @@ class Animator:
             ax.zaxis.pane.set_edgecolor('white')
             ax.grid(True, alpha=0.2, color='white', linestyle='--', linewidth=0.5)
             
-            # Calculate expected position for display only (not plotted)
+            # Calculate expected position for display
             amplitude = np.max(u[0])
             expected_pos = np.mean(x[u[0] > 0.5*amplitude]) + velocity * t[frame]
             
-            title_text.set_text(
-                f'{title} | t = {t[frame]:.2f}s | Position: {expected_pos:.2f}m'
-            )
-            
+            # Update text displays with 3 decimal places for time
+            time_text.set_text(f't = {t[frame]:.3f} s')
+            pos_text.set_text(f'Position: {expected_pos:.2f} m')
             stats_text.set_text(
-                f'Mass Δ: {mass_error:.2e} | Energy Δ: {energy_error:.2e} | '
-                f'v = {velocity:.3f} m/s'
+                f'Mass Δ: {mass_error:.2e}  |  Energy Δ: {energy_error:.2e}  |  '
+                f'Velocity: {velocity:.4f} m/s'
             )
             
-            return [surf, title_text, stats_text]
+            return [surf, title_text, time_text, pos_text, stats_text]
         
         anim = animation.FuncAnimation(
             fig, animate, frames=len(t),
@@ -208,7 +226,7 @@ class Animator:
     @staticmethod
     def _create_2d_animation(x, t, u, mass, energy, mass_error, energy_error,
                             velocity, title, colormap, line_width, alpha):
-        """Create 2D line plot animation."""
+        """Create 2D line plot animation with improved time display."""
         fig, ax = plt.subplots(figsize=(14, 8))
         fig.patch.set_facecolor('black')
         ax.set_facecolor('black')
@@ -229,22 +247,41 @@ class Animator:
         line_glow, = ax.plot([], [], linewidth=line_width*2.5,
                            color=cmap(0.7), alpha=alpha*0.25)
         
-        # REMOVED: Red marker initialization
-        
-        time_text = ax.text(
-            0.02, 0.95, '', transform=ax.transAxes,
-            fontsize=18, color='white', verticalalignment='top',
-            weight='bold',
+        # Title (top center)
+        title_text = ax.text(
+            0.5, 0.98, title, transform=ax.transAxes,
+            fontsize=18, color='white', weight='bold',
+            ha='center', va='top',
             bbox=dict(boxstyle='round', facecolor='black',
-                     alpha=0.6, edgecolor=cmap(0.7), linewidth=2)
+                     alpha=0.8, edgecolor='white', linewidth=2)
         )
         
-        stats_text = ax.text(
-            0.98, 0.95, '', transform=ax.transAxes,
-            fontsize=14, color='white',
-            verticalalignment='top', horizontalalignment='right',
+        # Time display (top left - large and prominent)
+        time_text = ax.text(
+            0.02, 0.98, '', transform=ax.transAxes,
+            fontsize=24, color='cyan', weight='bold',
+            ha='left', va='top',
             bbox=dict(boxstyle='round', facecolor='black',
-                     alpha=0.6, edgecolor='cyan', linewidth=2)
+                     alpha=0.9, edgecolor='cyan', linewidth=3)
+        )
+        
+        # Conservation stats (top right)
+        stats_text = ax.text(
+            0.98, 0.98, '', transform=ax.transAxes,
+            fontsize=12, color='white',
+            ha='right', va='top',
+            bbox=dict(boxstyle='round', facecolor='black',
+                     alpha=0.8, edgecolor='lime', linewidth=2)
+        )
+        
+        # Velocity info (bottom right)
+        vel_text = ax.text(
+            0.98, 0.02, f'Velocity: {velocity:.4f} m/s',
+            transform=ax.transAxes,
+            fontsize=11, color='yellow', weight='bold',
+            ha='right', va='bottom',
+            bbox=dict(boxstyle='round', facecolor='black',
+                     alpha=0.8, edgecolor='yellow', linewidth=1.5)
         )
         
         def animate(frame):
@@ -256,18 +293,16 @@ class Animator:
             line_glow.set_data(x, u[frame])
             line_glow.set_color(current_color)
             
-            # REMOVED: Red marker update
-            
-            time_text.set_text(f'{title}\nt = {t[frame]:.2f}s')
+            # Update text displays with 3 decimal places for time
+            time_text.set_text(f't = {t[frame]:.3f} s')
             time_text.get_bbox_patch().set_edgecolor(current_color)
             
             stats_text.set_text(
                 f'Mass Δ: {mass_error:.2e}\n'
-                f'Energy Δ: {energy_error:.2e}\n'
-                f'v = {velocity:.3f} m/s'
+                f'Energy Δ: {energy_error:.2e}'
             )
             
-            return [line, line_glow, time_text, stats_text]
+            return [line, line_glow, title_text, time_text, stats_text, vel_text]
         
         anim = animation.FuncAnimation(
             fig, animate, frames=len(t),

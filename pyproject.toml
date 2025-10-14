@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "sangkuriang-ideal-solver"
-version = "0.0.1"
+version = "0.0.2"
 description = "Idealized 1D Korteweg-de Vries soliton solver with spectral methods"
 authors = [
     "Sandy H.S. Herho",

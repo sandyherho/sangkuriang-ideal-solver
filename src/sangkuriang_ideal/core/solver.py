@@ -277,13 +277,7 @@ class KdVSolver:
             print(f"    Mass error: {mass_error:.2e}")
             print(f"    Momentum error: {momentum_error:.2e}")
             print(f"    Energy error: {energy_error:.2e}")
-            
-            if energy_error < 0.01:
-                print(f"    ✓ Energy conservation: EXCELLENT")
-            elif energy_error < 0.05:
-                print(f"    ✓ Energy conservation: GOOD")
-            else:
-                print(f"    ⚠ Energy conservation: Check parameters")
+ 
         
         # Calculate soliton velocity for tracking
         # For sech² profile: v = ε·A/3

@@ -23,7 +23,7 @@ def print_header():
     """Print ASCII art header."""
     print("\n" + "=" * 70)
     print(" " * 15 + "sangkuriang: Idealized KdV Solver")
-    print(" " * 22 + "Version 0.0.1")
+    print(" " * 22 + "Version 0.0.2")
     print("=" * 70)
     print("\n  Korteweg-de Vries Soliton Solver")
     print("  Spectral Methods + Adaptive Time Stepping")
