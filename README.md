@@ -5,7 +5,7 @@
 [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
 [![Numba](https://img.shields.io/badge/accelerated-numba-orange.svg)](https://numba.pydata.org/)
 
-High-performance idealized Korteweg-de Vries (KdV) soliton solver with spectral methods and Numba acceleration.
+Idealized Korteweg-de Vries (KdV) soliton solver with spectral methods and Numba acceleration.
 
 ## Physics
 
@@ -92,4 +92,4 @@ If you use this software in your research, please cite:
 
 ## License
 
-WTFPL - Do What The Fuck You Want To Public License
+WTFPL - Do What The F*ck You Want To Public License

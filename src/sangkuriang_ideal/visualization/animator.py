@@ -21,7 +21,7 @@ import matplotlib as mpl
 # Professional styling
 mpl.rcParams['font.family'] = 'sans-serif'
 mpl.rcParams['font.sans-serif'] = ['Arial', 'DejaVu Sans']
-mpl.rcParams['font.size'] = 10
+mpl.rcParams['font.size'] = 13
 mpl.rcParams['axes.linewidth'] = 1.5
 
 
@@ -122,14 +122,14 @@ class Animator:
             cmap=colormap, vmin=np.min(u), vmax=np.max(u)
         )
         cbar = fig.colorbar(dummy_surf, ax=ax, pad=0.1, shrink=0.6)
-        cbar.set_label('Amplitude [m]', color='white', fontsize=11)
-        cbar.ax.yaxis.set_tick_params(color='white', labelsize=9)
+        cbar.set_label('Amplitude [m]', color='white', fontsize=18)
+        cbar.ax.yaxis.set_tick_params(color='white', labelsize=12)
         plt.setp(plt.getp(cbar.ax.axes, 'yticklabels'), color='white')
         dummy_surf.remove()
         
         title_text = ax.text2D(
             0.5, 0.95, '', transform=ax.transAxes,
-            fontsize=13, color='white', weight='bold',
+            fontsize=14, color='white', weight='bold',
             ha='center', va='top',
             bbox=dict(boxstyle='round', facecolor='black',
                      alpha=0.7, edgecolor='white', linewidth=1.5)
@@ -174,7 +174,7 @@ class Animator:
             # Rotating view
             ax.view_init(elev=25, azim=45 + frame*0.2)
             
-            ax.tick_params(colors='white', which='both', labelsize=10)
+            ax.tick_params(colors='white', which='both', labelsize=14)
             ax.xaxis.pane.fill = False
             ax.yaxis.pane.fill = False
             ax.zaxis.pane.fill = False
@@ -233,7 +233,7 @@ class Animator:
         
         time_text = ax.text(
             0.02, 0.95, '', transform=ax.transAxes,
-            fontsize=13, color='white', verticalalignment='top',
+            fontsize=18, color='white', verticalalignment='top',
             weight='bold',
             bbox=dict(boxstyle='round', facecolor='black',
                      alpha=0.6, edgecolor=cmap(0.7), linewidth=2)
@@ -241,7 +241,7 @@ class Animator:
         
         stats_text = ax.text(
             0.98, 0.95, '', transform=ax.transAxes,
-            fontsize=11, color='white',
+            fontsize=14, color='white',
             verticalalignment='top', horizontalalignment='right',
             bbox=dict(boxstyle='round', facecolor='black',
                      alpha=0.6, edgecolor='cyan', linewidth=2)
