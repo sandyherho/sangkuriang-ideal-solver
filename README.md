@@ -1,5 +1,5 @@
 # `sangkuriang`: Idealized KdV solver
-
+[![DOI](https://zenodo.org/badge/1075146518.svg)](https://doi.org/10.5281/zenodo.17350032)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
 [![PyPI](https://img.shields.io/pypi/v/sangkuriang-ideal-solver.svg)](https://pypi.org/project/sangkuriang-ideal-solver/)
 [![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
