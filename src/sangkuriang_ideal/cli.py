@@ -2,7 +2,6 @@
 """
 Command Line Interface for Sangkuriang KdV Solver
 four test cases with increasing complexity
-FIXED: Clear timing breakdown display
 """
 
 import argparse

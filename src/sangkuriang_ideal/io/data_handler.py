@@ -134,7 +134,7 @@ class DataHandler:
             # Provenance
             nc.created = datetime.now().isoformat()
             nc.software = "sangkuriang-ideal-solver"
-            nc.version = "0.0.2"
+            nc.version = "0.0.3"
             nc.method = "spectral_fourier_dop853"
             nc.method_description = "Spectral Fourier derivatives + DOP853 time integration"
             

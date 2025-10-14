@@ -1,6 +1,6 @@
-"""Sangkuriang: Idealized 1D KdV Soliton Solver"""
+"""Sangkuriang: Idealized KdV Soliton Solver"""
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
 __author__ = "Sandy H.S. Herho, Rusmawan Suwarman, Dasapta E. Irawan"
 __license__ = "WTFPL"
 
