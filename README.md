@@ -241,13 +241,13 @@ print(f"Energy error: {result['energy_error']:.2e}")
 
 | Case | Description | Physics | Initial Conditions |
 |------|-------------|---------|-------------------|
-| 1 | Single soliton | Baseline propagation | $u(x,0) = 4 \operatorname{sech}^2((x+10)/2)$ |
+| 1 | Single soliton | Baseline propagation | $u(x,0) = 4 \text{ sech}^2((x+10)/2)$ |
 | 2 | Two equal solitons | Phase shift interaction | Two identical solitons |
-| 3 | Collision | Overtaking phenomenon | $A_1=6, A_2=2$ (different heights) |
-| 4 | Three-soliton system | Complex multi-body dynamics | $A_1=7, A_2=4, A_3=2.5$ |
+| 3 | Collision | Overtaking phenomenon | $A_1=6$, $A_2=2$ (different heights) |
+| 4 | Three-soliton system | Complex multi-body dynamics | $A_1=7$, $A_2=4$, $A_3=2.5$ |
 
 **Soliton Velocity Formula:**
-$$v = \frac{\varepsilon A}{3}$$
+$v = \frac{\varepsilon A}{3}$
 
 where $A$ is the soliton amplitude. Taller solitons travel faster, leading to overtaking collisions.
 
