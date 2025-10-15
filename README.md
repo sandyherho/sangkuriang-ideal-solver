@@ -1,4 +1,4 @@
-# `sangkuriang`: Idealized KdV solver
+# `sangkuriang`: an idealized KdV solver
 
 [![DOI](https://zenodo.org/badge/1075146518.svg)](https://doi.org/10.5281/zenodo.17350032)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
@@ -74,8 +74,8 @@ If you use this software in your research, please cite:
 
 ```bibtex
 @article{herho202x_sangkuriang,
-  title   = {Sangkuriang: An Idealized {K}orteweg-de {V}ries Soliton Solver with Pseudo-spectral Methods},
-  author  = {Herho, Sandy H. S. and Irawan, Dasapta E. and Suwarman, Rusmawan and Kaban, Siti N.},
+  title   = {sangkuriang: an Idealized {K}orteweg-de {V}ries soliton solver with pseudo-spectral methods},
+  author  = {Herho, Sandy H. S. and Khadami, Faruq and Anwar, Iwan P.},
   journal = {xxx},
   volume  = {xxx},
   pages   = {xxx--xxx},
@@ -87,9 +87,8 @@ If you use this software in your research, please cite:
 ## Authors
 
 - Sandy H.S. Herho
-- Dasapta E. Irawan
-- Rusmawan Suwarman  
-- Siti N. Kaban
+- Faruq Khadami
+- Iwan P. Anwar
 
 ## License
 

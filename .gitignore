@@ -28,3 +28,8 @@ venv/
 outputs/
 logs/
 poetry.lock
+
+# dist
+dist/
+*.tar.gz
+*.whl

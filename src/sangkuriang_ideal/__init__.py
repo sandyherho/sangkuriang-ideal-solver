@@ -1,7 +1,7 @@
 """Sangkuriang: Idealized KdV Soliton Solver"""
 
-__version__ = "0.0.3"
-__author__ = "Sandy H.S. Herho, Rusmawan Suwarman, Dasapta E. Irawan"
+__version__ = "0.0.4"
+__author__ = "Sandy H. S. Herho, Faruq Khadami, Iwan P. Anwar"
 __license__ = "WTFPL"
 
 from .core.solver import KdVSolver

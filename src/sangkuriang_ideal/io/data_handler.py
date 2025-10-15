@@ -136,10 +136,10 @@ class DataHandler:
             nc.software = "sangkuriang-ideal-solver"
             nc.version = "0.0.3"
             nc.method = "spectral_fourier_dop853"
-            nc.method_description = "Spectral Fourier derivatives + DOP853 time integration"
+            nc.method_description = "Pseudo-spectral Fourier derivatives + DOP853 time integration"
             
             nc.Conventions = "CF-1.8"
             nc.title = f"KdV Soliton Simulation: {metadata.get('scenario_name', 'unknown')}"
-            nc.institution = "Bandung Institute of Technology (ITB)"
+            nc.institution = "Samudera Sains Teknologi (SST) Ltd."
             nc.license = "WTFPL"
             nc.history = f"Created {datetime.now().isoformat()}"

@@ -1,12 +1,11 @@
 [tool.poetry]
 name = "sangkuriang-ideal-solver"
-version = "0.0.3"
+version = "0.0.4"
 description = "Idealized Korteweg-de Vries soliton solver with pseudo-spectral methods"
 authors = [
     "Sandy H.S. Herho",
-    "Dasapta E. Irawan",
-    "Rusmawan Suwarman",
-    "Siti N. Kaban"
+    "Faruq Khadami",
+    "Iwan P. Anwar"
 ]
 license = "WTFPL"
 readme = "README.md"
