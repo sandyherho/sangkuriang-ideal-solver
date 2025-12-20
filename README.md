@@ -258,7 +258,7 @@ If you use this software in your research, please cite:
 ```bibtex
 @article{herho202x_sangkuriang,
   title   = {sangkuriang: an Idealized {K}orteweg-de {V}ries soliton solver with pseudo-spectral methods},
-  author  = {Herho, Sandy H. S. and Khadami, Faruq and Anwar, Iwan P.},
+  author  = {Herho, Sandy H. S. and Khadami, Faruq and Anwar, Iwan P. and Irawan, Dasapta E.},
   journal = {xxx},
   volume  = {xxx},
   pages   = {xxx--xxx},
@@ -272,6 +272,7 @@ If you use this software in your research, please cite:
 - Sandy H.S. Herho
 - Faruq Khadami
 - Iwan P. Anwar
+- Dasapta E. Irawan
 
 ## License
 
