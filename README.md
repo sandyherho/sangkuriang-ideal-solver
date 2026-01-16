@@ -12,6 +12,10 @@
 
 This solver implements pseudo-spectral methods combined with adaptive high-order time integration to achieve spectral accuracy in space and exceptional temporal precision. The implementation leverages Numba's JIT compilation for significant performance gains (10-100× speedup) and supports multi-core parallel processing for large-scale simulations. The package includes comprehensive visualization tools for creating publication-quality 3D animations and NetCDF4 output for interoperability with scientific data analysis workflows.
 
+<p align="center">
+  <img src="https://github.com/sandyherho/sangkuriang-ideal-solver/blob/main/.assets/anim.gif" alt="soliton_collides" width="600">
+</p>
+
 **Key Applications:**
 - Nonlinear wave dynamics research
 - Soliton interaction studies
@@ -269,11 +273,11 @@ If you use this software in your research, please cite:
 
 ## Authors
 
-- Sandy H.S. Herho
+- Sandy H.S. Herho (sandy.herho@ronininstitute.org)
 - Faruq Khadami
 - Iwan P. Anwar
 - Dasapta E. Irawan
 
 ## License
 
-WTFPL - Do What The F*ck You Want To Public License
+WTFPL - Do What The F*ck You Want To Public License. See [LICENSE](LICENSE) for details.

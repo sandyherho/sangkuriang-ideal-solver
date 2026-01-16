@@ -33,3 +33,5 @@ poetry.lock
 dist/
 *.tar.gz
 *.whl
+
+!.assets/*.gif
