@@ -13,7 +13,7 @@
 This solver implements pseudo-spectral methods combined with adaptive high-order time integration to achieve spectral accuracy in space and exceptional temporal precision. The implementation leverages Numba's JIT compilation for significant performance gains (10-100× speedup) and supports multi-core parallel processing for large-scale simulations. The package includes comprehensive visualization tools for creating publication-quality 3D animations and NetCDF4 output for interoperability with scientific data analysis workflows.
 
 <p align="center">
-  <img src="https://github.com/sandyherho/sangkuriang-ideal-solver/blob/main/.assets/anim.gif" alt="soliton_collides" width="600">
+  <img src="https://github.com/sandyherho/sangkuriang-ideal-solver/blob/main/.assets/anim.gif" alt="soliton_collides" width="800">
 </p>
 
 **Key Applications:**
