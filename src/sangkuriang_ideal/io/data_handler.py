@@ -134,12 +134,12 @@ class DataHandler:
             # Provenance
             nc.created = datetime.now().isoformat()
             nc.software = "sangkuriang-ideal-solver"
-            nc.version = "0.0.6"
+            nc.version = "0.0.7"
             nc.method = "spectral_fourier_dop853"
             nc.method_description = "Pseudo-spectral Fourier derivatives + DOP853 time integration"
             
             nc.Conventions = "CF-1.8"
             nc.title = f"KdV Soliton Simulation: {metadata.get('scenario_name', 'unknown')}"
-            nc.institution = "Samudera Sains Teknologi (SST) Ltd."
-            nc.license = "WTFPL"
+            nc.institution = "Applied Geology Research Group ITB"
+            nc.license = "MIT"
             nc.history = f"Created {datetime.now().isoformat()}"
