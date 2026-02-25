@@ -262,7 +262,7 @@ If you use this software in your research, please cite:
 ```bibtex
 @article{irawan202x_sangkuriang,
   title   = {{\texttt{sangkuriang}: A pseudo-spectral Python library for Idealized Korteweg-de Vries soliton simulation}},
-  author  = {Irawan, Dasapta E. and Herho, Sandy H. S. and Khadami, Faruq and Anwar, Iwan P.},
+  author  = {Irawan, Dasapta E. and Herho, Sandy H. S. and Pamumpuni, Astyka and Kartiko, Rendy D. and Khadami, Faruq and Anwar, Iwan P.},
   journal = {xxx},
   volume  = {xxx},
   pages   = {xxx--xxx},
@@ -275,6 +275,8 @@ If you use this software in your research, please cite:
 
 - Dasapta E. Irawan (dasaptaerwin@itb.ac.id)
 - Sandy H.S. Herho 
+- Astyka Pamumpuni
+- Rendy Dwi Kartiko
 - Faruq Khadami
 - Iwan P. Anwar
 
