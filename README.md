@@ -260,9 +260,9 @@ where $A$ is the soliton amplitude. Taller solitons travel faster, leading to ov
 If you use this software in your research, please cite:
 
 ```bibtex
-@article{herho202x_sangkuriang,
-  title   = {sangkuriang: an Idealized {K}orteweg-de {V}ries soliton solver with pseudo-spectral methods},
-  author  = {Herho, Sandy H. S. and Khadami, Faruq and Anwar, Iwan P. and Irawan, Dasapta E.},
+@article{irawan202x_sangkuriang,
+  title   = {{\texttt{sangkuriang}: A pseudo-spectral Python library for Idealized Korteweg-de Vries soliton simulation}},
+  author  = {Irawan, Dasapta E. and Herho, Sandy H. S. and Khadami, Faruq and Anwar, Iwan P.},
   journal = {xxx},
   volume  = {xxx},
   pages   = {xxx--xxx},
@@ -273,11 +273,11 @@ If you use this software in your research, please cite:
 
 ## Authors
 
-- Sandy H.S. Herho (sandy.herho@ronininstitute.org)
+- Dasapta E. Irawan (dasaptaerwin@itb.ac.id)
+- Sandy H.S. Herho 
 - Faruq Khadami
 - Iwan P. Anwar
-- Dasapta E. Irawan
 
 ## License
 
-WTFPL - Do What The F*ck You Want To Public License. See [LICENSE](LICENSE) for details.
+MIT © 2026 Applied Geology Research Group ITB - See [LICENSE](LICENSE) for details.
