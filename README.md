@@ -279,6 +279,9 @@ If you use this software in your research, please cite:
 - Rendy Dwi Kartiko
 - Faruq Khadami
 - Iwan P. Anwar
+- Karina A. Sujatmiko
+- Alfita P. Handayani
+- Rusmawan Suwarman
 
 ## License
 
