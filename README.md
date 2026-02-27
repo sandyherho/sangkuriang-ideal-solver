@@ -257,12 +257,12 @@ where $A$ is the soliton amplitude. Taller solitons travel faster, leading to ov
 
 ## Citation
 
-If you use this software in your research, please cite:
+If you use this software in your study, please cite:
 
 ```bibtex
 @article{irawan202x_sangkuriang,
   title   = {{\texttt{sangkuriang}: A pseudo-spectral Python library for Idealized Korteweg-de Vries soliton simulation}},
-  author  = {Irawan, Dasapta E. and Herho, Sandy H. S. and Pamumpuni, Astyka and Kartiko, Rendy D. and Khadami, Faruq and Anwar, Iwan P.},
+  author  = {Irawan, Dasapta E. and Herho, Sandy H. S. and Pamumpuni, Astyka and Kartiko, Rendy D. and Khadami, Faruq Anwar, Iwan P. and Sujatmiko, Karina A. and Handayani, Alfita P. and Fajary, Faiz R. and Suwarman, R.},
   journal = {xxx},
   volume  = {xxx},
   pages   = {xxx--xxx},
@@ -281,6 +281,7 @@ If you use this software in your research, please cite:
 - Iwan P. Anwar
 - Karina A. Sujatmiko
 - Alfita P. Handayani
+- Faiz R. Fajary
 - Rusmawan Suwarman
 
 ## License
