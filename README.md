@@ -1,4 +1,4 @@
-# `sangkuriang`: an idealized KdV solver
+# `sangkuriang`: An Open-Source Pseudo-Spectral Solver for Idealized Korteweg–de Vries Soliton Simulations
 
 [![DOI](https://zenodo.org/badge/1075146518.svg)](https://doi.org/10.5281/zenodo.17350032)
 [![Python](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://www.python.org/downloads/)
@@ -260,14 +260,15 @@ where $A$ is the soliton amplitude. Taller solitons travel faster, leading to ov
 If you use this software in your study, please cite:
 
 ```bibtex
-@article{irawan202x_sangkuriang,
-  title   = {{\texttt{sangkuriang}: A pseudo-spectral Python library for Idealized Korteweg-de Vries soliton simulation}},
+@article{irawan2026_sangkuriang,
+  title   = {{An Open-Source Pseudo-Spectral Solver for Idealized Korteweg–de Vries Soliton Simulations}},
   author  = {Irawan, Dasapta E. and Herho, Sandy H. S. and Pamumpuni, Astyka and Kartiko, Rendy D. and Khadami, Faruq Anwar, Iwan P. and Sujatmiko, Karina A. and Handayani, Alfita P. and Fajary, Faiz R. and Suwarman, R.},
-  journal = {xxx},
-  volume  = {xxx},
-  pages   = {xxx--xxx},
-  year    = {202x},
-  doi     = {10.xxxx/xxxxx}
+  journal = {Water},
+  volume  = {18},
+  number = {7},
+  pages   = {779},
+  year    = {2026},
+  note = {\url{https://doi.org/10.3390/w18070779}}
 }
 ```
 

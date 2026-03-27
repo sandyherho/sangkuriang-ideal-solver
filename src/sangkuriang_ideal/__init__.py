@@ -1,6 +1,6 @@
 """Sangkuriang: Idealized KdV Soliton Solver"""
 
-__version__ = "0.0.10"
+__version__ = "0.0.11"
 __author__ = "Dasapta E. Irawan, Sandy H. S. Herho, Astyka Pamumpuni, Rendy D. Kartiko, Faruq Khadami, Iwan P. Anwar, Karina A. Sujatmiko, Alfita P. Handayani, Faiz R. Fajary, and Rusmawan Suwarman"
 __license__ = "WTFPL"
 
